@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>REGISTRATION FORM</title>
+</head>
+<body>
+    <form action="/reg" method="post" id="login-form">{% csrf_token %}
+    <table>
+        <tr><th>Registration</th></tr>
+        <tr>
+            <td><label>Login:</label></td>
+            <td><input type="text" name="username" autofocus autocapitalize="none" autocomplete="username" maxlength="150" required id="id_username"></td>
+        </tr>
+        <tr>
+            <td><label>Password</label></td>
+            <td><input type="password" name="password" autocomplete="current-password" required id="id_password"></td>
+        </tr>
+        <tr>
+            <td><label>Name</label></td>
+            <td><input type="text" name="first_name"  maxlength="128"></td>
+        </tr>
+        <tr>
+            <td><label>Surname</label></td>
+            <td><input type="text" name="last_name"  maxlength="128"></td>
+        </tr>
+
+
+        <tr>
+            <td><label>Email</label></td>
+            <td><input type="email" name="email"></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Register"></td>
+        </tr>
+</table>
+</form>
+    <form action=" /" method="get">
+        <input type="submit" value="Main Page">
+    </form>
+</body>
+</html>
