@@ -29,7 +29,7 @@ class SearchResultsView(ListView):
 class NeedUpdateView(UpdateView):
     model = Post
     template_name = 'edit.html'
-    fields = 'title', 'description'
+    fields = 'title', 'ingredients', 'description'
     success_url = '/'
 
 
@@ -42,6 +42,6 @@ class PostDeleteView(DeleteView):
 class PostCreateView(CreateView):
     model = Post
     template_name = 'create.html'
-    fields = ['title', 'description', 'image']
+    fields = ['title', 'ingredients', 'description', 'image']
     success_url = '/'
     

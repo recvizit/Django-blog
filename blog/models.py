@@ -5,7 +5,8 @@ class Post(models.Model):
     author = models.CharField(max_length=20, default='User')
     image = models.ImageField(upload_to='static/posts')
     title = models.CharField(max_length=50, null=True, blank=True)
-    description = models.TextField(max_length=500)
+    ingredients = models.TextField(max_length=500)
+    description = models.TextField(max_length=1500)
 
     class Meta:
         verbose_name = 'Пост'

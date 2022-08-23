@@ -3,7 +3,7 @@ from django.contrib import admin
 
 
 class PostAdmin(admin.ModelAdmin):
-    list_display = ("image", "title", "description")
+    list_display = ("image", "title", "ingredients", "description")
     search_fields = ["title"]
 
 
