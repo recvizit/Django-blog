@@ -17,19 +17,12 @@ from django.contrib import admin
 from django.urls import path, include, re_path
 from .views import registration_view, home_view, login_view
 from django.http import HttpResponse
-from blog.views import ListObjectsView, DetailObjectsView, SearchResultsView, NeedUpdateView, PostDeleteView, PostCreateView
 
 
 urlpatterns = [
-    path('action/', ListObjectsView.as_view()),
-    path('<int:pk>', DetailObjectsView.as_view(), name='detail'),
-    path('search/', SearchResultsView.as_view(), name='search_results'),
-    path('edit/<int:pk>', NeedUpdateView.as_view(), name='edit'),
-    path('delete/<int:pk>', PostDeleteView.as_view(), name='delete'),
-    path('create/', PostCreateView.as_view(), name='create'),
     path('admin/', admin.site.urls),
     path('', home_view),
-    # path('', include('blog.urls')), # TODO
+    path('action/', include('blog.urls')),
     path('login/', login_view, name='enter'),
     path('reg', registration_view),
     path('api/', include('api.urls')),

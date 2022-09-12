@@ -2,8 +2,6 @@
 
 {% block content %}
 
-<title>Easy cook</title>
-
 <body style="font-family: 'Montserrat', sans-serif; background-color: #FFFAF0">
 
 <center>
@@ -43,7 +41,7 @@
         {% for i in posts %}
             <div class="col">
                 <div class="card" style="width: 18rem; margin-bottom:15px; background-color: #DCDCDC">
-                    <img src="{{i.image}}" class="card-img-top" alt="{{i.id}}">
+                    <img src="{{i.image.url}}" class="card-img-top" alt="{{i.id}}">
                     <div class="card-body">
                         <h3 class="card-title">{{i.title}}</h3>
                         <h5 class="card-text">{{i.ingredients}}</h5>
