@@ -15,23 +15,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include, re_path
-from .views import registration_view
+from .views import registration_view, home_view, login_view
 from django.http import HttpResponse
-
-
-def view_xxx(request):###
-    return HttpResponse('Censored')
-
-
-def view_hello(request):###
-    return HttpResponse('Kostya Hello!')
+from blog.views import ListObjectsView, DetailObjectsView, SearchResultsView, NeedUpdateView, PostDeleteView, PostCreateView
 
 
 urlpatterns = [
-    re_path(r'xxx', view_xxx), ###
-    re_path(r'^Kos', view_hello), ###
+    path('action/', ListObjectsView.as_view()),
+    path('<int:pk>', DetailObjectsView.as_view(), name='detail'),
+    path('search/', SearchResultsView.as_view(), name='search_results'),
+    path('edit/<int:pk>', NeedUpdateView.as_view(), name='edit'),
+    path('delete/<int:pk>', PostDeleteView.as_view(), name='delete'),
+    path('create/', PostCreateView.as_view(), name='create'),
     path('admin/', admin.site.urls),
-    path('', include('blog.urls')),
+    path('', home_view),
+    # path('', include('blog.urls')), # TODO
+    path('login/', login_view, name='enter'),
     path('reg', registration_view),
     path('api/', include('api.urls')),
 ]

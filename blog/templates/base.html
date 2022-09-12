@@ -17,35 +17,47 @@
 <body style="font-family: 'Montserrat', sans-serif; background-color: #87CEEB">
 
 <nav class="navbar" style="background-color: #4682B4; position:sticky; top:0;z-index:100;">
+
     <div class="container-fluid">
         <table>
             <tr>
                 <th>
-                    <a class="navbar-brand" href="/"><i class="fa-solid fa-egg"></i>  Main </a>
+                    <a class="navbar-brand" href="/"><i class="fa-solid fa-egg"></i> Главная </a>
+                </th>
+                <th>
+                    <a href="/admin" class="form-control me-2; btn btn-danger">
+                    Администрирование</a>
                 </th>
             </tr>
-            <tr>
-                <td>
-                    <a href="{% url 'create' %}" class="form-control me-2; btn btn-success"> + Add new recipes</a>
-                </td>
-            </tr>
         </table>
+
+        <center>
+            <div class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Игры
+                </a>
+
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Крестики нолики</a></li>
+                    <li><a class="dropdown-item" href="#">Кости</a></li>
+                    <li><a class="dropdown-item" href="#">Угадай число</a></li>
+                </ul>
+            </div>
+
+        </center>
+
         <table>
             <tr>
                 <th>
                     <form class="d-flex" action="{% url 'search_results' %}" role="search" method="get">
-                    <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search" name="q">
-                    <button class="btn btn-dark" type="submit">Search</button>
+                        <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search" name="q">
+                        <button class="btn btn-dark" type="submit">Поиск</button>
                     </form>
                 </th>
             </tr>
-            <tr>
-                <td>
-                    <button class="form-control me-2; btn btn-success" onclick = "window.location.href ='reg';">Registration</button>
-                </td>
-            </tr>
         </table>
     </div>
+
 </nav>
 
 

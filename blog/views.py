@@ -5,7 +5,7 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 
 class ListObjectsView(ListView):
     model = Post
-    template_name = 'main.html'
+    template_name = 'action.html'
     context_object_name = 'posts'
 
 
